@@ -3,24 +3,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dizital Alien LLP</title>
+    <title>Dizital Alien LLP - The Tech Gazette</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
-        h1 { color: #2c3e50; }
-        .projects { margin-top: 20px; }
+        :root {
+            --paper-bg: #f4f1ea;
+            --ink: #111111;
+            --border-style: 3px double var(--ink);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--paper-bg);
+            color: var(--ink);
+            font-family: 'Merriweather', serif;
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Masthead / Header */
+        header {
+            text-align: center;
+            border-bottom: var(--border-style);
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .date-line {
+            display: flex;
+            justify-content: space-between;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            font-family: Arial, sans-serif;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--ink);
+            border-top: 1px solid var(--ink);
+            padding: 5px 0;
+            margin-bottom: 1rem;
+        }
+
+        h1.masthead {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .sub-masthead {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+        }
+
+        /* Layout Grid */
+        .newspaper-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Articles */
+        article {
+            margin-bottom: 2rem;
+        }
+
+        h2.headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        h3.subheadline {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            font-style: italic;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--ink);
+            padding-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .drop-cap::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            float: left;
+            line-height: 0.8;
+            padding-right: 8px;
+            padding-top: 4px;
+            font-weight: 900;
+        }
+
+        /* Multi-column text for main article */
+        .multi-col {
+            column-count: 2;
+            column-gap: 2rem;
+        }
+
+        /* Sidebar / Column 2 */
+        .sidebar {
+            border-left: 1px solid var(--ink);
+            padding-left: 2rem;
+        }
+
+        .sidebar-box {
+            border: 2px solid var(--ink);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            background-color: #ebe7dd;
+        }
+
+        .sidebar-box h4 {
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            border-bottom: 1px solid var(--ink);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .sidebar-box ul {
+            list-style-type: square;
+            padding-left: 1.2rem;
+        }
+
+        .sidebar-box li {
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            border-top: var(--border-style);
+            padding-top: 1rem;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* Responsive */
+        @media (max-width: 800px) {
+            .newspaper-grid {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                border-left: none;
+                border-top: 1px solid var(--ink);
+                padding-left: 0;
+                padding-top: 2rem;
+            }
+            .multi-col {
+                column-count: 1;
+            }
+            h1.masthead {
+                font-size: 3rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>👽 Dizital Alien LLP</h1>
-    <p>Welcome to the official website for Dizital Alien LLP — a technology venture based in Raipur, Chhattisgarh.</p>
-    
-    <div class="projects">
-        <h2>🚀 Our Flagship Projects</h2>
-        <ul>
-            <li><strong>LaundryGogo:</strong> Hyper-local garment care ecosystem.</li>
-            <li><strong>EventSnap (SEPSA):</strong> AI-powered photo-sharing and facial recognition platform.</li>
-            <li><strong>Enterprise HMS:</strong> Robust, end-to-end healthcare ERP.</li>
-        </ul>
-    </div>
+
+    <header>
+        <div class="date-line">
+            <span>Vol. I, No. 1</span>
+            <span>Raipur, Chhattisgarh</span>
+            <span>Thursday, May 21, 2026</span>
+        </div>
+        <h1 class="masthead">The Dizital Alien</h1>
+        <div class="sub-masthead">Engineering High-Margin Tech Ecosystems for the Modern World</div>
+    </header>
+
+    <main class="newspaper-grid">
+        
+        <section class="main-content">
+            <article>
+                <h2 class="headline">Organizing the Unorganized: LaundryGogo Scales Operations</h2>
+                <h3 class="subheadline">Asset-light aggregator model promises to digitize a ₹5,000 Crore local market.</h3>
+                
+                <div class="multi-col">
+                    <p class="drop-cap">A hyper-local revolution is quietly taking shape across the urban hubs of Chhattisgarh. Dizital Alien LLP has officially launched its flagship platform, <strong>LaundryGogo (Trenzzo Laundry)</strong>, an intelligent logistics orchestration engine designed to modernize the traditional garment care sector.</p>
+                    
+                    <p>Unlike traditional laundromats that require heavy machinery investments, the firm relies on a highly scalable, asset-light technology layer. Utilizing AWS cloud architectures, automated WhatsApp API milestones, and advanced geospatial routing, the platform transforms independent dhobis and local shops into tech-enabled micro-entrepreneurs.</p>
+                    
+                    <p>With an incredibly low-overhead IT infrastructure paired with high-margin transaction volumes, the aggregator model effectively tackles the urban convenience gap while generating direct blue-collar and white-collar employment locally.</p>
+                </div>
+            </article>
+
+            <hr style="border-top: 1px solid var(--ink); margin: 2rem 0;">
+
+            <article>
+                <h2 class="headline" style="font-size: 2rem;">AI & Health-Tech Prototypes Unveiled</h2>
+                <p>Beyond logistics, the engineering team has been actively deploying advanced AI and data architectures. <strong>EventSnap (SEPSA)</strong>, an AI-powered photo-sharing application utilizing DeepFace and OpenCV, is set to automate facial recognition and image delivery for large-scale corporate events.</p>
+                
+                <p>Simultaneously, under the domain vision of the executive board, a highly robust Enterprise Hospital Management System (HMS) prototype has been architected for healthcare institutions. The ERP solution promises high-concurrency data management and secure compliance pipelines, showcasing the firm's diverse software capabilities.</p>
+            </article>
+        </section>
+
+        <aside class="sidebar">
+            <div class="sidebar-box">
+                <h4>The Executive Board</h4>
+                <ul>
+                    <li><strong>Dr. Garima Singh:</strong> Chief Executive Officer & Domain Visionary. Leading health-tech initiatives and organizational strategy.</li>
+                    <li><strong>Nikhil Kumar:</strong> Core Owner & Frontend Lead. Architecting intuitive, responsive web deployments.</li>
+                    <li><strong>Ravi Prakash:</strong> Core Owner, Head of Sales & Strategy. Spearheading B2B, B2G acquisitions, and local digital integrations.</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-box">
+                <h4>Strategic Advisors</h4>
+                <ul>
+                    <li><strong>Dhruw Shekhar:</strong> Consulting Data Architect. Expert in cloud orchestration, Docker setups, and advanced AI pipelines.</li>
+                    <li><strong>Shashi Prakash:</strong> Founder of LaundryGogo & Consulting Backend Expert. Architecting secure DBMS frameworks.</li>
+                </ul>
+            </div>
+
+            <article>
+                <h3 class="subheadline" style="font-size: 1.2rem; margin-top: 1rem;">Tech Stack Brief</h3>
+                <p style="font-size: 0.9rem; font-family: Arial, sans-serif;">
+                    The LLP's infrastructure relies heavily on modern deployments including Microsoft Azure, Docker/Docker Compose, Python-based AI microservices, and highly secure RAG pipelines.
+                </p>
+            </article>
+        </aside>
+
+    </main>
+
+    <footer>
+        &copy; 2026 Dizital Alien LLP. Hosted on GitHub Pages.
+    </footer>
+
 </body>
 </html>
